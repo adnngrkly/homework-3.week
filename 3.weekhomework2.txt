@@ -1,0 +1,33 @@
+##3.week--homework=2
+
+
+number=53
+guessnumber=0     #tahmin sayisi
+while True:
+    try:
+        guess=float(input("Please guess a number between 0 and 100\t:"))
+        guessnumber +=1
+    except ValueError:
+        print("Estimated value should be number")              # rakam disinda bir karekter girdiginde uyari yapmakla birlikte bir defa deneme yaptigini kayit altina alir
+        guessnumber +=1
+        continue
+    if guess>100:
+        print("Estimated number shouldn't be more 100")
+        continue
+    elif guess<30:
+        print("you have predicted too low.")
+        continue
+    elif 30<=guess<53:
+        print("You have approached to estimated number. You should increase it")
+        continue
+    elif 53<guess<75:
+        print("You have approached to estimated number. You should decrease it")
+        continue
+    elif 74<=guess<100:
+        print("you have predicted too high.")
+        continue
+    elif guess==number:
+        print("Congratulations, You have known in the {}th prediction ".format(guessnumber))
+        quit()
+
+

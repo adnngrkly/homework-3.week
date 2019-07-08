@@ -1,0 +1,104 @@
+##3.week--homework=4
+
+
+
+area="""Bu Bir Alan Hesaplamasi Islemidir
+Lutfen hesaplamak istediginiz sekli seciniz
+Ucgen icin:      1
+Kare icin:       2
+Dikdortgen icin: 3
+basiniz!!!!"""
+
+volume="""Bu Bir Hacim Hesaplamasi Islemidir
+Lutfen hesaplamak istediginiz sekli seciniz
+Kup icin:    1
+Kure icin:   2
+Koni icin:   3"""
+
+print(area)
+print(volume)
+
+try:
+
+    choosearea=int(input("Lutfen hangi seklin alanini hesaplamak istediginizi seciniz"))
+    choosevolume=int(input("Lutfen hangi seklin hacmini hesaplamak istediginizi seciniz"))
+
+    if choosearea<1 or choosearea>3:                                 #alan farkli bir secim yapilirsa
+        print("Yanlis bir deger girdiniz")
+        quit()
+    if choosevolume<1 or choosevolume>3:                             #hacim farkli bir secim yapilirsa
+        print("Yanlis bir deger girdiniz")
+        quit()
+    if choosearea==1:
+        firstsidetriangle=float(input("Birinci kenar olcusunu giriniz"))
+        secondsidetriangle=float(input("ikinci kenar olcusunu giriniz"))
+        thirdsidetriangle=float(input("ucuncu kenar olcusunu giriniz"))
+        deger1=(firstsidetriangle+secondsidetriangle+thirdsidetriangle)/2
+        areatriangle=(deger1*(deger1-firstsidetriangle)*(deger1-secondsidetriangle)*(deger1-thirdsidetriangle))*0.5
+        if areatriangle<=0:                                                                                         #kenar olculeri ucgen meydana getiriyormu kontrol
+            print("Girmis oldugunuz kenar olculeri bir ucgen meydana getirmemektedir")
+            quit()
+        else:
+            pass
+        print("Ucgenin alani:",areatriangle)
+    if choosearea==2:
+        karekenar=float(input("Lutfen kenarin kenar olcusunu giriniz"))
+        if karekenar<=0:                                                                                    #o yada negatif bir deger girilirse
+            print("Kenar olcusunu yanlis girdiniz")
+            quit()
+        else:
+            pass
+        karealan=karekenar**2
+        print("Karenin alani",karealan)
+    if choosearea==3:
+        dikdortgenilkkenar=float(input("dikdortgenin ilk kenarini giriniz"))
+        dikdortgenikincikenar=float(input("dikdortgenin diger kenarini giriniz"))
+        if dikdortgenilkkenar<=0 or dikdortgenikincikenar<=0:
+            print("Kenar olcusunu yanlis girdiniz")
+            quit()
+        else:
+            pass
+        dikdortgenalan=dikdortgenikincikenar*dikdortgenilkkenar
+        print("Diktortgenin alani:",dikdortgenalan)
+    if choosevolume==1:
+        kupkenar=float(input("Kupun kenar uzunlugunu giriniz"))
+        if kupkenar<=0:
+            print("Kenar olcusunu yanlis girdiniz")
+            quit()
+        else:
+            pass
+        kuphacim=kupkenar**3
+        print("Kupun hacmi:",kuphacim)
+    if choosevolume==2:
+        yaricap=float(input("yaricapi giriniz"))
+        if yaricap<=0:
+            print("Kenar olcusunu yanlis girdiniz")
+            quit()
+        else:
+            pass
+        pi=3.14
+        kurehacim=pi*yaricap*yaricap*(4/3)
+        print("Kurenin hacmi:",kurehacim)
+    if choosevolume==3:
+        yaricap1=float(input("yaricapi giriniz"))
+        yukseklik=float(input("yuksekligi giriniz"))
+        if yaricap1<=0 or yukseklik<=0:
+            print("Kenar olcusunu yanlis girdiniz")
+            quit()
+        else:
+            pass
+        pi=3.14
+        konihacim=(1/3)*pi*yaricap1*yaricap1*yukseklik
+        print("Koninin hacmi:",konihacim)
+
+except ValueError:
+    print("yanlis bir deger girdiniz")
+except NameError:
+    print("yanlis bir deger girdiniz")
+
+quit()
+
+
+
+
+

@@ -1,0 +1,61 @@
+##3.week--homework=3
+# burada actigim kaynak dosyanin adi football_players.txt
+
+try:                                                     ##eger kaynak dosya yok ise hata verir
+    with open("football_players.txt","r") as footballplayers:
+        value=list(footballplayers.readlines())
+    newvalue = len(list(value))                             ##dosya kac satirdan olusuyor
+except FileNotFoundError:
+    print("The source file could not be reached")
+
+with open("1team.txt","w") as firstteam:                     ##dosyalar acilir
+    firstteam.close()
+with open("2team.txt", "w") as secondteam:
+    secondteam.close()
+with open("3team.txt", "w") as thirdteam:
+    thirdteam.close()
+
+try:                                  ##kaynak doaya yok ise
+    i=0
+    while i<newvalue:               ##dosya satir sayisi
+
+        if "Galatasaray" in value[i]:
+            with open("1team.txt", "a") as firstteam:
+                firstteam.write(value[i])
+            i += 1
+            continue
+
+        elif "Fenerbahçe" in value[i]:
+            with open("2team.txt", "a") as secondteam:
+                secondteam.write(value[i])
+            i += 1
+            continue
+
+        elif "Beþiktaþ" in value[i]:
+            with open("3team.txt", "a") as thirdteam:
+                thirdteam.write(value[i])
+            i += 1
+            continue
+except NameError:
+    print("The source file could not be reached")     #kaynak dosya yok ise
+
+with open("1team.txt","r") as firstteam:            ##en son dosyalari printlemek icin
+    print(firstteam.readlines())
+    firstteam.close()
+with open("2team.txt", "r") as secondteam:
+    print(secondteam.readlines())
+    secondteam.close()
+with open("3team.txt", "r") as thirdteam:
+    print(thirdteam.readlines())
+    thirdteam.close()
+
+
+
+
+
+
+
+
+
+
+

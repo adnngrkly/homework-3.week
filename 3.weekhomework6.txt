@@ -1,0 +1,38 @@
+##3.week--homework=6
+
+
+
+while True:
+    try:
+        number=int(input("Please enter a number\t:"))
+        if number<2:
+            print("The number should  be et least 2")
+            continue
+        if number==2:
+            print("the number which you enter is a prime number")
+            quit()
+        divided=2
+        while divided<number:                                                 #girilen sayidan bir eksigine kadar bolme islemini yapar
+            consequence=number%divided
+            #print(consequence)
+            if consequence==0:
+                print("the number which you enter is not a prime number")
+                quit()
+            elif consequence!=0:
+                k=number-1
+                #print(k)
+                if divided == k:                                                    #bolunen sayi bolen sayidan bir eksigine kadar ulastimi kontrol eder
+                    print("the number which you enter is a prime number")
+                    quit()
+                else:
+                    divided += 1
+                    #print(divided)
+                    continue
+
+
+    except ValueError:
+        print("Please control your number which you enter")
+        continue
+    except NameError:
+        print("Please control your number which you enter")
+        continue

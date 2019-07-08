@@ -1,0 +1,35 @@
+##3.week--homework=1
+
+
+information = open("information.txt", "a")  # dosya yoksa acar varsa ekleme yapar
+information.write("Username and Password Informations")
+information.close()
+
+while True:
+
+    username = input("Please enter your username\t:")
+    password = input("Please enter your password\t:")
+    with open("information.txt", "r") as information:
+        value = information.readlines()
+        value1=len(value)
+
+    k=0
+    for i in value:
+        if username in i:
+            print("This username was used. Please you try with other username")
+            quit()
+        else:
+            if k<value1:       ##burada tum icerigin tarandigindan emin oluyoruz
+                k+=1
+                continue
+            else:
+                pass
+
+    with open("information.txt", "a") as information:
+        information.write("\n")  # readlines komutu ile her satiri okudugu icin her bilgi her satira girisi yapildi
+        information.write(username)
+        information.write("\n")
+        information.write(password)
+        information.write("\n")
+    print("your username and password was created")
+    quit()
